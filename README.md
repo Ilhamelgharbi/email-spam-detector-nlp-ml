@@ -13,13 +13,23 @@ Ce projet permet de détecter automatiquement les spams dans les emails grâce a
 └── README.md                # Documentation
 ```
 
-## Instructions pour l’exécution
-1. Installer les dépendances :
+## 🚀 Installation rapide
+
+1. **Cloner le projet**
+   ```bash
+   git clone https://github.com/votre-utilisateur/email-spam-detector-nlp-ml.git
+   cd email-spam-detector-nlp-ml
+   ```
+
+2. **Installer les dépendances**
    ```bash
    pip install -r requirements.txt
    ```
-2. Lancer l’application :
+
+3. **Lancer l'application Streamlit**
    ```bash
    streamlit run app.py
    ```
-3. Ouvrir le notebook pour explorer le pipeline complet.
+
+4. **Explorer le pipeline complet**
+   - Ouvrez le notebook `Notebook_Spam_Classifier_Clean.ipynb` pour voir toutes les étapes (EDA, NLP, entraînement, sauvegarde du modèle).
