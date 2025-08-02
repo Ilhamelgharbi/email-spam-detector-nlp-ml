@@ -45,7 +45,9 @@ Bienvenue sur l'interface de détection de spams. Saisissez un email ou chargez 
 Ce projet combine NLP et Machine Learning pour la sécurité des communications.
 """)
 
-tab1, tab2 = st.tabs(["Prédiction", "Exploration des données (EDA)"])
+
+# Ajout d'un onglet dédié pour les nuages de mots
+tab1, tab2, tab3 = st.tabs(["Prédiction", "Exploration des données (EDA)", "Nuages de mots"])
 
 with tab1:
     st.subheader("Analyse d'un email unique")
@@ -78,8 +80,6 @@ with tab1:
             except Exception as e:
                 st.error(f"Erreur lors de la prédiction : {e}")
 
-
-# Onglet EDA : visualisation des graphiques et wordclouds
 with tab2:
     st.subheader("Exploration des données (EDA)")
     try:
@@ -87,9 +87,15 @@ with tab2:
         st.write("Aperçu du jeu de données :", df.head())
         st.write("Distribution des classes :")
         st.bar_chart(df['label_text'].value_counts())
+    except Exception as e:
+        st.error(f"Erreur lors de l'affichage EDA : {e}")
+
+with tab3:
+    st.subheader("Nuages de mots : Spam vs Ham")
+    try:
+        df = pd.read_csv('data/DataSet_Emails.csv')
         import matplotlib.pyplot as plt
         from wordcloud import WordCloud
-        import io
         # Wordcloud spam
         st.write("Nuage de mots - Spam")
         spam_texts = df[df['label_text'] == 'spam']['text'].dropna().astype(str)
@@ -109,6 +115,5 @@ with tab2:
         ax2.axis('off')
         st.pyplot(fig2)
     except Exception as e:
-        st.error(f"Erreur lors de l'affichage EDA : {e}")
-
+        st.error(f"Erreur lors de l'affichage des nuages de mots : {e}")
 
