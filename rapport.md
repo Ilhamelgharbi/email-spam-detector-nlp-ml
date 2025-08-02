@@ -105,14 +105,6 @@ Optimisation du modèle SVM via **RandomizedSearchCV** :
 
 ---
 
-## 11. Recommandations
-
-- 🔌 **Intégration** dans une messagerie ou une API
-- 📡 **Tester sur des données réelles** pour valider la robustesse
-- 🧠 **Explorer des modèles avancés** (ex. BERT, deep learning)
-- 📈 **Surveillance continue** pour détecter le drift des données
-
----
 
 ## 12. Technologies Utilisées
 
